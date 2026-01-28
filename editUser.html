@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en" data-bs-theme="blue-theme">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Edit Account Details</title>
+    <!--favicon-->
+    <link rel="icon" href="assets/images/favicon-32x32.png" type="image/png">
+    <!-- loader-->
+    <link href="assets/css/pace.min.css" rel="stylesheet">
+    <script src="assets/js/pace.min.js"></script>
+
+    <!--plugins-->
+    <link href="assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/plugins/metismenu/metisMenu.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/plugins/metismenu/mm-vertical.css">
+    <!--bootstrap css-->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined" rel="stylesheet">
+    <!--main css-->
+    <link href="assets/css/bootstrap-extended.css" rel="stylesheet">
+    <link href="sass/main.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="sass/dark-theme.css" rel="stylesheet">
+    <link href="sass/blue-theme.css" rel="stylesheet">
+    <link href="sass/responsive.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-register">
+
+
+    <!--authentication-->
+
+    <div class="container-fluid my-5">
+        <div class="row">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5 col-xxl-5 mx-auto img-move cursor-pointer"
+                style="background: none !important; box-shadow: none !important; border: none !important;">
+                <div class="card mb-0"
+                    style="background: none !important; box-shadow: none !important; border: none !important;">
+                    <div class="card-body p-5 text-center"
+                        style="background: none !important; box-shadow: none !important; border: none !important;">
+
+                        <!-- Image container -->
+                        <div class="img-container" style="display: inline-block; perspective: 1000px;">
+                            <img src="assets/images/edituser.png" alt="img" id="moveImg" class="img-fluid" style="max-width: 100%; height: auto; display: block; margin: 0 auto; 
+                 transition: transform 0.1s ease, box-shadow 0.3s ease;">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5 col-xxl-5 mx-auto">
+                <div class="card rounded-4 mb-0 border-top border-4 border-primary border-gradient-1">
+                    <div class="card-body p-5">
+                        <h5 class="fw-bold" style="text-align: center;">Edit User details</h5>
+                        <div class="form-body my-4">
+                            <form class="row g-3">
+                                <div class="col-12">
+                                    <label for="inputSelectCountry" class="form-label">Type of User</label>
+                                    <select class="form-select" id="inputSelectCountry"
+                                        aria-label="Default select example">
+                                        <option selected="">Select Type of User</option>
+                                        <option value="admin">Admin</option>
+                                        <option value="user">User</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label for="username" class="form-label">Username</label>
+                                    <input type="email" class="form-control" id="inputUsername" name="username"
+                                        placeholder="Enter Username">
+                                </div>
+                                <div class="col-12">
+                                    <label for="reportingTo" class="form-label">Reporting To</label>
+                                    <input type="email" class="form-control" id="reportingTo" name="reportingTo"
+                                        placeholder="Enter Username">
+                                </div>
+                                <div class="col-12">
+                                    <label for="aspect_id" class="form-label">Aspect ID</label>
+                                    <input type="text" class="form-control" id="aspect_id" name="aspect_id"
+                                        placeholder="Enter Aspect ID">
+                                </div>
+                                <div class="col-12">
+                                    <div class="d-grid">
+                                        <button type="submit" class="btn btn-grd-danger">Save Changes</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end row-->
+    </div>
+
+    <!--authentication-->
+
+
+
+
+    <!--plugins-->
+    <script>
+        const img = document.getElementById("moveImg");
+        const container = document.querySelector(".img-move");
+
+        container.addEventListener("mousemove", (e) => {
+            const rect = container.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            // Normalize to range -1 to 1
+            const offsetX = (x - rect.width / 2) / (rect.width / 2);
+            const offsetY = (y - rect.height / 2) / (rect.height / 2);
+
+            const rotateX = offsetY * 30; // tilt up/down
+            const rotateY = -offsetX * 30; // tilt left/right
+
+            img.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+        });
+
+        container.addEventListener("mouseleave", () => {
+            img.style.transform = "rotateX(0deg) rotateY(0deg) scale(1)";
+            img.style.boxShadow = "none";
+        });
+    </script>
+    <script src="assets/js/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#show_hide_password a").on('click', function (event) {
+                event.preventDefault();
+                if ($('#show_hide_password input').attr("type") == "text") {
+                    $('#show_hide_password input').attr('type', 'password');
+                    $('#show_hide_password i').addClass("bi-eye-slash-fill");
+                    $('#show_hide_password i').removeClass("bi-eye-fill");
+                } else if ($('#show_hide_password input').attr("type") == "password") {
+                    $('#show_hide_password input').attr('type', 'text');
+                    $('#show_hide_password i').removeClass("bi-eye-slash-fill");
+                    $('#show_hide_password i').addClass("bi-eye-fill");
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

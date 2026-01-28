@@ -1,0 +1,667 @@
+<!doctype html>
+<html lang="en" data-bs-theme="blue-theme">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Work Data</title>
+    <!--favicon-->
+    <link rel="icon" href="assets/images/favicon-32x32.png" type="image/png">
+    <!-- loader-->
+    <link href="assets/css/pace.min.css" rel="stylesheet">
+    <script src="assets/js/pace.min.js"></script>
+
+    <!--plugins-->
+    <link rel="stylesheet" type="text/css" href="assets/plugins/metismenu/metisMenu.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/plugins/metismenu/mm-vertical.css">
+    <link rel="stylesheet" type="text/css" href="assets/plugins/simplebar/css/simplebar.css">
+    <!--bootstrap css-->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined" rel="stylesheet">
+    <!--main css-->
+    <link href="assets/css/bootstrap-extended.css" rel="stylesheet">
+    <link href="sass/main.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="sass/blue-theme.css" rel="stylesheet">
+    <link href="sass/responsive.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        #apr_table tbody td:nth-child(1),
+        #apr_table tbody td:nth-child(3) {
+            text-align-last: center;
+            padding-left: 5px;
+        }
+
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            filter: invert(1);
+            /* makes it white */
+            cursor: pointer;
+        }
+
+        /* CSS - put this after Bootstrap CSS (in your stylesheet or a <style> block) */
+        .custom-select {
+            /* remove native arrows */
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            /* visuals */
+            color: #ffffff;
+            /* white arrow SVG (data URI) */
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' width='12' height='12'><path fill='white' d='M5 7l5 5 5-5z'/></svg>");
+        }
+
+        /* hide default IE/Edge arrow */
+        .custom-select::-ms-expand {
+            display: none;
+        }
+
+        /* make options readable in dark theme */
+        .custom-select option {
+            background-color: #1a2238;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <!--start header-->
+    <header class="top-header">
+        <nav class="navbar navbar-expand align-items-center gap-4">
+            <div class="btn-toggle d-lg-none">
+                <a href="javascript:;"><i class="material-icons-outlined">menu</i></a>
+            </div>
+            <div class="breadcrumb-title pe-3" style="font-size: 18px;"><img src="assets/images/file.png" class="p-1 "
+                    width="45" height="45" alt="file">Work Data</div>
+            <ul class="navbar-nav gap-2 nav-right-links align-items-center ms-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link position-relative dropdown-toggle dropdown-toggle-nocaret"
+                        data-bs-toggle="dropdown" href="javascript:;"><i
+                            class="material-icons-outlined">notifications</i>
+                        <span class="badge-notify">1</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-user dropdown-menu-end shadow py-1"
+                        style="min-width: fit-content; min-width: fit-content; max-height: 500px;">
+                        <!-- 🔹 FIXED (non-scrollable) section -->
+                        <div>
+                            <a class="dropdown-item gap-2 py-1 pb-0"
+                                style="background:none !important; color:inherit !important;">
+                                <div class="d-flex p-0" style="height: 30px;">
+                                    <img src="assets/images/notification.png" class="p-1" width="35" height="35"
+                                        style="margin-top:-1px;" alt="notification">
+                                    <h7 style="margin-top:2px; margin-left:5px;">
+                                        Pending tasks, Kindly Take action
+                                    </h7>
+                                </div>
+                            </a>
+                        </div>
+                        <hr class="dropdown-divider">
+                        <div style="overflow-y: auto; max-height: 400px;">
+                            <a class="dropdown-item d-flex align-items-center gap-2 py-1" href="addData.html">
+                                <i class="material-icons-outlined">layers</i>
+                                <span style="font-size: 12px;">Reference : Value</span>
+                                <button title="Take Action" type="button" class="btn btn-outline-warning"
+                                    style="font-size: 10px;">
+                                    <i class="bi bi-pencil-square"></i>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="javascrpt:;" class="d-flex dropdown-toggle dropdown-toggle-nocaret"
+                        data-bs-toggle="dropdown">
+                        <img src="assets/images/avatars/01.png" class="rounded-circle p-1 border" width="45" height="45"
+                            alt="">
+                        <!-- 🧾 Username + Designation -->
+                        <div class="ms-2 text-light">
+                            <div class="fw-bold">User Name</div>
+                            <small class="text-secondary">User Type</small>
+                        </div>
+                    </a>
+                    <div class="dropdown-menu dropdown-user dropdown-menu-end shadow">
+                        <a class="dropdown-item d-flex align-items-center gap-2 py-0" href="#"
+                            style="font-size: 12px;"><i class="material-icons-outlined">lock_reset</i>Change
+                            Password</a>
+                        <hr class="dropdown-divider">
+                        <a class="dropdown-item d-flex align-items-center gap-2 py-0" href="login.html"
+                            style="font-size: 12px;"><i class="material-icons-outlined">power_settings_new</i>Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!--end top header-->
+    <!--start sidebar-->
+    <aside class="sidebar-wrapper" data-simplebar="true" style="border-right: none;">
+        <div class="sidebar-header" style="background-color:  #07061F;">
+            <div class="logo-icon">
+                <img src="assets/images/logo-icon.png" class="logo-img" alt="Logo"
+                    style="border-radius: 10px; height: 55px; width: 55px;">
+            </div>
+            <div class="logo-name flex-grow-1">
+                <h5 class="mb-0">&nbsp;&nbsp;MKT-BHS</h5>
+            </div>
+            <div class="sidebar-close">
+                <span class="material-icons-outlined">close</span>
+            </div>
+        </div>
+        <div class="sidebar-nav h-100" style="background-image: url('assets/images/111.jpeg');">
+            <!--navigation-->
+            <ul class="metismenu side-nav glass-effect" id="sidenav">
+                <li class="side-nav-item">
+                    <a href="dashboard.html" class="side-nav-link">
+                        <div class="parent-icon"><i class="material-icons-outlined">dashboard</i>
+                        </div>
+                        <div class="menu-title">Dashboard</div>
+                    </a>
+                </li>
+                <li class="side-nav-item">
+                    <a href="workData.html" class="side-nav-link active">
+                        <div class="parent-icon"><i class="material-icons-outlined">view_week</i>
+                        </div>
+                        <div class="menu-title">Work Data</div>
+                    </a>
+                </li>
+                <li class="side-nav-item">
+                    <a href="substitute.html" class="side-nav-link">
+                        <div class="parent-icon"><i class="material-icons-outlined">published_with_changes</i>
+                        </div>
+                        <div class="menu-title">Substitute Task
+                        </div>
+                    </a>
+                </li>
+                <li class="side-nav-item">
+                    <a data-bs-toggle="collapse" href="#sidebarPages" aria-expanded="false" aria-controls="sidebarPages"
+                        class="side-nav-link">
+                        <div class="parent-icon"><i class="material-icons-outlined">menu_book</i>
+                        </div>
+                        <div class="menu-title">Knowledge Bank
+                        </div>
+                        <i class="material-icons-outlined" style="font-size:16px;">keyboard_arrow_down</i>
+                    </a>
+                    <div class="collapse" id="sidebarPages">
+                        <ul class="side-nav-second-level" style="border-radius: 10px; background-color: transparent;">
+                            <li class="side-nav-item">
+                                <a href="#"><i class="material-icons-outlined"
+                                        style="font-size: 16px;">description</i>&nbsp;Category 1</a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="#"><i class="material-icons-outlined"
+                                        style="font-size: 16px;">description</i>&nbsp;Category 2</a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="#"><i class="material-icons-outlined"
+                                        style="font-size: 16px;">description</i>&nbsp;Category 3</a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="#"><i class="material-icons-outlined"
+                                        style="font-size:16px;">file_upload</i>&nbsp;Upload PIS /
+                                    Scripts</a>
+                            </li>
+                        </ul>
+                        <hr>
+                    </div>
+                </li>
+                <li class="side-nav-item">
+                    <a href="assign.html" class="side-nav-link">
+                        <div class="parent-icon"><i class="material-icons-outlined">device_hub</i>
+                        </div>
+                        <div class="menu-title">Assign Task</div>
+                    </a>
+                </li>
+                <li class="side-nav-item">
+                    <a href="upload.html" class="side-nav-link">
+                        <div class="parent-icon"><i class="material-icons-outlined">file_upload</i>
+                        </div>
+                        <div class="menu-title">Uploads</div>
+                    </a>
+                </li>
+                <li class="side-nav-item">
+                    <a href="users.html" class="side-nav-link">
+                        <div class="parent-icon"><i class="material-icons-outlined">groups</i>
+                        </div>
+                        <div class="menu-title">Users</div>
+                    </a>
+                </li>
+            </ul>
+            <!--end navigation-->
+        </div>
+    </aside>
+    <!--end sidebar-->
+    <!--start main wrapper-->
+    <main class="main-wrapper">
+        <div class="main-content">
+            <!-- Assigned table start -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center gap-2 overflow-auto">
+                                <!-- Total -->
+                                <div class="d-flex align-items-center"
+                                    style="border-right: 1px solid #444444; padding-right:5px;">
+                                    <i class="bi bi-list-check text-primary fs-5 me-2"></i>
+                                    <span class="fw-bold">Total:</span>
+                                    <span class="ms-1 text-primary fw-semibold">100</span>
+                                </div>
+                                <!-- Completed -->
+                                <div class="d-flex align-items-center"
+                                    style="border-right: 1px solid #444444; padding-right:5px;">
+                                    <i class="bi bi-check-circle-fill text-success fs-5 me-2"></i>
+                                    <span class="fw-bold">Completed:</span>
+                                    <span class="ms-1 text-success fw-semibold">60</span>
+                                </div>
+                                <!-- Pending -->
+                                <div class="d-flex align-items-center"
+                                    style="border-right: 1px solid #444444; padding-right:5px;">
+                                    <i class="bi bi-exclamation-circle text-danger fs-5 me-2"></i>
+                                    <span class="fw-bold">Pending:</span>
+                                    <span class="ms-1 text-danger fw-semibold">10</span>
+                                </div>
+                                <!-- In Progress -->
+                                <div class="d-flex align-items-center"
+                                    style="border-right: 1px solid #444444; padding-right:5px;">
+                                    <i class="bi bi-hourglass-split text-warning fs-5 me-2"></i>
+                                    <span class="fw-bold">In Progress:</span>
+                                    <span class="ms-1 text-warning fw-semibold">30</span>
+                                </div>
+                                <!-- 📅 Date Range Selector -->
+                                <div class="d-flex align-items-center ms-auto">
+                                    <span class="mx-1">From</span>
+                                    <input type="date" id="startDate" class="form-control form-control-sm me-1"
+                                        style="width:120px;">
+                                    <span class="mx-1">To</span>
+                                    <input type="date" id="endDate" class="form-control form-control-sm me-3"
+                                        style="width:120px;">
+                                    <!-- 🔽 Status Dropdown -->
+                                    <select class="form-select form-select-sm me-3 custom-select" style="width: 100px;">
+                                        <option selected disabled>Status</option>
+                                        <option value="IN Progress">In Progress</option>
+                                        <option value="pending">Pending</option>
+                                        <option value="complete">Complete</option>
+                                    </select>
+                                    <!-- ✅ Apply Button -->
+                                    <button title="Apply" class="btn btn-sm btn-grd-branding me-2"><img
+                                            src="assets/images/double-check.gif" alt="img"
+                                            style="border-radius:5px; height: 30px;">
+                                    </button>
+                                    <!-- ⬇️ Download Button -->
+                                    <button title="Download Data" class="btn btn-sm btn-grd-danger"><img
+                                            src="assets/images/download-folder.gif" alt="img"
+                                            style="border-radius:5px; height:30px;">
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body d-flex justify-content-center">
+                            <div class="search-box w-100">
+                                <div class="search-bar">
+                                    <div class="position-relative">
+                                        <input class="form-control rounded-5 px-5 search-control" type="text"
+                                            placeholder="Search...">
+                                        <span
+                                            class="material-icons-outlined position-absolute d-lg-block d-none ms-3 translate-middle-y start-0 top-50">search</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body" style="max-height:400px;">
+                            <div
+                                style="max-height:350px; overflow: auto; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+                                <table class="table mb-0 text-nowrap table-hover" id="apr_table">
+                                    <thead class="sticky-header text-center table-info"
+                                        style="position: sticky; top: 0; z-index: 1;">
+                                        <tr>
+                                            <th scope="col">Sr. No.</th>
+                                            <th scope="col">Status</th>
+                                            <th scope="col">Manage Records</th>
+                                            <th scope="col">Date & Time</th>
+                                            <th scope="col">Divison</th>
+                                            <th scope="col">Date of Lead Received</th>
+                                            <th scope="col">Month</th>
+                                            <th scope="col">SOA</th>
+                                            <th scope="col">Campaign</th>
+                                            <th scope="col">Bucket SOA</th>
+                                            <th scope="col">Central/Local</th>
+                                            <th scope="col">TID Number</th>
+                                            <th scope="col">Customer BP Number</th>
+                                            <th scope="col">AP Ticket Number</th>
+                                            <th scope="col">Customer Name</th>
+                                            <th scope="col">Customer Mobile Number</th>
+                                            <th scope="col">Customer E-Mail ID</th>
+                                            <th scope="col">Alternate Contact Number</th>
+                                            <th scope="col">Landmark</th>
+                                            <th scope="col">Station/Metro</th>
+                                            <th scope="col">City</th>
+                                            <th scope="col">Pincode</th>
+                                            <th scope="col">Division</th>
+                                            <th scope="col">Flat/Bungalow/Commercial</th>
+                                            <th scope="col">Interiors Only/Exteriors Only/Interiors & Exteriors</th>
+                                            <th scope="col">Reason For Painting</th>
+                                            <th scope="col">Particulars</th>
+                                            <th scope="col">Re-Painting/Fresh Painting</th>
+                                            <th scope="col">Numbers of Rooms</th>
+                                            <th scope="col">Decor Solution</th>
+                                            <th scope="col">Chargeable Pincode Amount For APEHS</th>
+                                            <th scope="col">Date of 1st Call Attempted</th>
+                                            <th scope="col">Time of 1st Call Attempted</th>
+                                            <th scope="col">Status of 1st Call Attempted</th>
+                                            <th scope="col">Date of 2nd Call Attempted</th>
+                                            <th scope="col">Time of 2nd Call Attempted</th>
+                                            <th scope="col">Status of 2nd Call Attempted</th>
+                                            <th scope="col">Date of 3rd Call Attempted</th>
+                                            <th scope="col">Time of 3rd Call Attempted</th>
+                                            <th scope="col">Status of 3rd Call Attempted</th>
+                                            <th scope="col">Date of 4th Call Attempted</th>
+                                            <th scope="col">Time of 4th Call Attempted</th>
+                                            <th scope="col">Status of 4th Call Attempted</th>
+                                            <th scope="col">Date of 5th Call Attempted</th>
+                                            <th scope="col">Time of 5th Call Attempted</th>
+                                            <th scope="col">Status of 5th Call Attempted</th>
+                                            <th scope="col">Date of 6th Call Attempted</th>
+                                            <th scope="col">Time of 6th Call Attempted</th>
+                                            <th scope="col">Status of 6th Call Attempted</th>
+                                            <th scope="col">Last Call Date</th>
+                                            <th scope="col">Last Call Time</th>
+                                            <th scope="col">Last Call Status</th>
+                                            <th scope="col">Unsuccess</th>
+                                            <th scope="col">G</th>
+                                            <th scope="col">Appointment Confirmed Date</th>
+                                            <th scope="col">Customer Comments (If any/Reason For Unsuccess)</th>
+                                            <th scope="col">Reason For TC Dropped</th>
+                                            <th scope="col">Reason For Unsuccess In APEHS/Buckets</th>
+                                            <th scope="col">Appoitment Date</th>
+                                            <th scope="col">Appoitment Time</th>
+                                            <th scope="col">Water Proofing (Yes/No)</th>
+                                            <th scope="col">SA Name</th>
+                                            <th scope="col">SA Number</th>
+                                            <th scope="col">TY Number</th>
+                                            <th scope="col">SH Code</th>
+                                            <th scope="col">DND</th>
+                                            <th scope="col">Lead Record Type</th>
+                                            <th scope="col">Disposition</th>
+                                            <th scope="col">Sub Disposition In Last Call</th>
+                                            <th scope="col">Campaign Name</th>
+                                            <th scope="col">User Profile</th>
+                                            <th scope="col">Dealer Code</th>
+                                            <th scope="col">Service ID</th>
+                                            <th scope="col">Lead Status</th>
+                                            <th scope="col">Drop Lead Reason</th>
+                                            <th scope="col">Advisor Name</th>
+                                            <th scope="col">Aspect ID</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td class="text-warning fw-bold">In Progress</td>
+                                            <td><a href="addData.html"><img src="assets/images/add.png" alt="edit"
+                                                        title="Edit Record" style="height: 20px;"></a>
+                                            </td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td class="text-success fw-bold">Completed</td>
+                                            <td><a href="addData.html"><img src="assets/images/checked.png" alt="edit"
+                                                        title="Task Completed" style="height:22px;"></a>
+                                            </td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td class="text-danger fw-bold">Pending</td>
+                                            <td><a href="addData.html"><img src="assets/images/add.png" alt="Add Record"
+                                                        title="Add Record" style="height: 20px;"></a>
+                                            </td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!--end main wrapper-->
+    <!--start overlay-->
+    <div class="overlay btn-toggle"></div>
+    <!--end overlay-->
+    <!--start footer-->
+    <!-- <footer class="page-footer bg-light">
+        <p class="mb-0"></p>
+    </footer> -->
+    <!--end footer-->
+    <!--bootstrap js-->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!--plugins-->
+    <script src="assets/js/jquery.min.js"></script>
+    <!--plugins-->
+    <script src="assets/plugins/metismenu/metisMenu.min.js"></script>
+    <script src="assets/plugins/simplebar/js/simplebar.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

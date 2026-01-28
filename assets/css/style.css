@@ -1,0 +1,450 @@
+/* Login page */
+.wh-42 {
+    width: 42px;
+    height: 42px;
+}
+
+a.wh-42 {
+    transition: all 0.3s ease;
+}
+
+a.wh-42:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+.gradient-text {
+    cursor: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+/* IMPORTANT */
+.datastatus {
+    position: relative;
+    overflow: visible !important;
+    /* col overflow issue fix */
+}
+
+/* Tooltip wrapper */
+.tooltip-box::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%) scale(0.8);
+    background: #111;
+    color: #fff;
+    padding: 6px 14px;
+    font-size: 13px;
+    border-radius: 6px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    z-index: 9999;
+}
+
+/* Tooltip arrow */
+.tooltip-box::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%) scale(0.8);
+    border-width: 6px;
+    border-style: solid;
+    border-color: #111 transparent transparent transparent;
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 9999;
+}
+
+/* Hover show */
+.tooltip-box:hover::after,
+.tooltip-box:hover::before {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+}
+
+@keyframes glowPulse {
+    0% {
+        box-shadow: 0 0 6px rgba(108, 99, 255, .5);
+    }
+
+    50% {
+        box-shadow: 0 0 20px rgba(108, 99, 255, .9);
+    }
+
+    100% {
+        box-shadow: 0 0 6px rgba(108, 99, 255, .5);
+    }
+}
+
+.tooltip-box:hover::after {
+    animation: glowPulse 1.5s infinite;
+}
+
+
+
+
+.datastatus {
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.datastatus:hover {
+    transform: scale(1.06);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+.datastatus {
+    overflow: hidden;
+}
+
+.datastatus:hover {
+    transform: scale(1.06) translateY(-6px);
+}
+
+/* Dropdown hover par sirf text zoom */
+.dropdown-user .dropdown-item {
+    background-color: transparent !important;
+    transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.dropdown-user .dropdown-item:hover {
+    transform: scale(1.05);
+}
+
+input[type="radio"] {
+    accent-color: #00c6ff;
+    /* makes radio button color bluish */
+    transform: scale(0.9);
+    /* slightly smaller */
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="datetime-local"]::-webkit-calendar-picker-indicator,
+input[type="month"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+}
+
+/* CSS - put this after Bootstrap CSS (in your stylesheet or a <style> block) */
+.form-select {
+    /* remove native arrows */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    /* visuals */
+    color: #ffffff;
+    /* white arrow SVG (data URI) */
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' width='12' height='12'><path fill='white' d='M5 7l5 5 5-5z'/></svg>");
+}
+
+/* hide default IE/Edge arrow */
+.form-select::-ms-expand {
+    display: none;
+}
+
+/* make options readable in dark theme */
+.form-select option {
+    background-color: #1a2238;
+    color: #fff;
+}
+
+/* From Uiverse.io by jawad_8494 */
+.super-button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 6px 20px;
+    background: linear-gradient(145deg, #0f0f0f, #1c1c1c);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 100px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    z-index: 1;
+}
+
+.super-button::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg, #00ffff, #ff00ff, #00ffff);
+    animation: rotate 4s linear infinite;
+    z-index: -2;
+}
+
+.super-button::after {
+    content: "";
+    position: absolute;
+    inset: 2px;
+    background: #0a0a0a;
+    border-radius: inherit;
+    z-index: -1;
+}
+
+.super-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(0, 255, 255, 0.2);
+}
+
+.super-button:hover .arrow {
+    transform: translateX(6px);
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* CSS - put this after Bootstrap CSS (in your stylesheet or a <style> block) */
+.custom-select {
+    /* remove native arrows */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    /* visuals */
+    color: #ffffff;
+    /* white arrow SVG (data URI) */
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' width='12' height='12'><path fill='white' d='M5 7l5 5 5-5z'/></svg>");
+}
+
+/* hide default IE/Edge arrow */
+.custom-select::-ms-expand {
+    display: none;
+}
+
+/* make options readable in dark theme */
+.custom-select option {
+    background-color: #1a2238;
+    color: #fff;
+}
+
+#apr_table tbody td:nth-child(1),
+#apr_table tbody td:nth-child(2),
+#apr_table tbody td:nth-child(3) {
+    text-align-last: center;
+    padding-left: 5px;
+}
+
+.h-100 {
+    /* Replace with your image path */
+    background-size: cover;
+    /* Ensure the background covers the entire div */
+    background-position: center;
+    /* Center the image */
+    background-repeat: no-repeat;
+    /* Prevent repetition */
+    overflow: hidden;
+    /* Ensures no content spills out */
+    border-radius: 10px;
+    /* Optional: Adds rounded corners */
+}
+
+.glass-effect {
+    background-color: rgba(0, 0, 0, 0.1);
+    /* Semi-transparent dark background */
+    backdrop-filter: blur(4px);
+    /* Glass blur effect */
+    -webkit-backdrop-filter: blur(4px);
+    /* Safari support */
+    border-radius: 10px;
+    /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    /* Depth */
+    overflow-x: auto;
+    /* Prevent content spill */
+    margin: 10px;
+    /* Adds spacing around the list */
+    margin-top: 20px;
+}
+
+.sidebar-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    /* jo tumhari width ho */
+    height: 100vh;
+    background-size: cover;
+}
+
+.side-nav-item {
+    margin-top: 20px;
+    width: 100%;
+    /* Full width */
+}
+
+.side-nav-link {
+    display: flex;
+    /* Horizontal alignment for icon and text */
+    align-items: center;
+    /* Vertical centering */
+    justify-content: flex-start;
+    /* Align text and icon to the left */
+    white-space: nowrap;
+    /* Prevent text wrapping */
+    overflow: hidden;
+    /* Hide overflowing text */
+    text-overflow: ellipsis;
+    /* Add ellipsis for truncated text */
+    width: 100%;
+    /* Full width for links */
+    padding: 10px 15px;
+    /* Inner spacing */
+    border-radius: 5px;
+    /* Rounded corners for links */
+    text-decoration: none;
+    /* Remove underline */
+    color: white;
+    /* White text color */
+    font-weight: 500;
+    /* Slightly bold */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* Smooth hover effect */
+}
+
+.side-nav-link:hover {
+    background-color: rgba(170, 170, 170, 0.2);
+    /* Light background on hover */
+    color: #fff;
+    /* Change text color on hover */
+}
+
+.side-nav-link i {
+    margin-right: 10px;
+    /* Space between icon and text */
+    flex-shrink: 0;
+    /* Prevent icon from resizing */
+    color: #cccccc;
+}
+
+.side-nav-link .menu-title {
+    margin-right: 10px;
+    /* Space between icon and text */
+    flex-shrink: 0;
+    /* Prevent icon from resizing */
+    color: #cccccc;
+}
+
+#sidenav .side-nav-item.mm-active>.side-nav-link,
+#sidenav .side-nav-link.active {
+    background: #320d5b19 !important;
+    border-radius: 10px;
+}
+
+/* Active text */
+#sidenav .side-nav-item.mm-active>.side-nav-link .menu-title,
+#sidenav .side-nav-link.active .menu-title {
+    font-weight: 600;
+    color: #ffffff !important;
+}
+
+/* Active icon */
+#sidenav .side-nav-item.mm-active>.side-nav-link i,
+#sidenav .side-nav-link.active i {
+    color: #ffffff !important;
+}
+
+/* Base glass effect */
+.side-nav .side-nav-link {
+    position: relative;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+/* Icon & text smooth */
+.side-nav .side-nav-link .parent-icon,
+.side-nav .side-nav-link .menu-title {
+    transition: transform 0.3s ease;
+}
+
+/* Glass + Glow on hover */
+.side-nav .side-nav-link:hover {
+    box-shadow:
+        0 0 10px #00ffff66,
+        0 0 20px rgba(0, 255, 255, 0.25);
+}
+
+/* Zoom icon & text */
+.side-nav .side-nav-link:hover .parent-icon,
+.side-nav .side-nav-link:hover .menu-title {
+    transform: scale(1.12);
+}
+
+.side-nav-second-level a {
+    display: block;
+    padding: 6px 10px;
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.side-nav-second-level a:hover {
+    box-shadow: 0 0 12px rgba(0, 255, 255, 0.35);
+    transform: scale(1.06);
+}
+
+.side-nav .side-nav-link.active {
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+
+#chart {
+    margin-top: 20px;
+}
+
+.no-data-box {
+    display: none;
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: 12px;
+    background: linear-gradient(135deg,
+            rgba(30, 41, 59, 0.6),
+            rgba(15, 23, 42, 0.9));
+    border: 1px dashed #334155;
+    color: #e5e7eb;
+}
+
+.no-data-icon {
+    font-size: 42px;
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+.no-data-box h6 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.no-data-box p {
+    font-size: 13px;
+    color: #94a3b8;
+    line-height: 1.5;
+}

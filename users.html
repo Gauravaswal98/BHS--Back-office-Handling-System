@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en" data-bs-theme="blue-theme">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Users</title>
+    <!--favicon-->
+    <link rel="icon" href="assets/images/favicon-32x32.png" type="image/png">
+    <!-- loader-->
+    <link href="assets/css/pace.min.css" rel="stylesheet">
+    <script src="assets/js/pace.min.js"></script>
+
+    <!--plugins-->
+    <link rel="stylesheet" type="text/css" href="assets/plugins/metismenu/metisMenu.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/plugins/metismenu/mm-vertical.css">
+    <link rel="stylesheet" type="text/css" href="assets/plugins/simplebar/css/simplebar.css">
+    <!--bootstrap css-->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined" rel="stylesheet">
+    <!--main css-->
+    <link href="assets/css/bootstrap-extended.css" rel="stylesheet">
+    <link href="sass/main.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="sass/blue-theme.css" rel="stylesheet">
+    <link href="sass/responsive.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!--start header-->
+    <header class="top-header">
+        <nav class="navbar navbar-expand align-items-center gap-4">
+            <div class="btn-toggle d-lg-none">
+                <a href="javascript:;"><i class="material-icons-outlined">menu</i></a>
+            </div>
+            <div class="breadcrumb-title pe-3" style="font-size: 18px;"><img src="assets/images/group.png" class="p-1 "
+                    width="40" height="40" alt="file"> Manage Users</div>
+            <ul class="navbar-nav gap-2 nav-right-links align-items-center ms-auto">
+                <li class="nav-item dropdown">
+                    <a href="#" class="d-flex dropdown-toggle dropdown-toggle-nocaret" data-bs-toggle="dropdown">
+                        <img src="assets/images/avatars/01.png" class="rounded-circle p-1 border" width="45" height="45"
+                            alt="">
+                        <!-- 🧾 Username + Designation -->
+                        <div class="ms-2 text-light">
+                            <div class="fw-bold">Username</div>
+                            <small class="text-secondary">User Type</small>
+                        </div>
+                    </a>
+                    <div class="dropdown-menu dropdown-user dropdown-menu-end shadow">
+                        <a class="dropdown-item d-flex align-items-center gap-2 py-0" href="#"
+                            style="font-size: 12px;"><i class="material-icons-outlined">lock_reset</i>Change
+                            Password</a>
+                        <hr class="dropdown-divider">
+                        <a class="dropdown-item d-flex align-items-center gap-2 py-0" href="login.html"
+                            style="font-size: 12px;"><i class="material-icons-outlined">power_settings_new</i>Logout</a>
+                    </div>
+                </li>
+            </ul>
+
+        </nav>
+    </header>
+    <!--end top header-->
+
+    <!--start sidebar-->
+    <aside class="sidebar-wrapper" data-simplebar="true">
+        <div class="sidebar-header">
+            <div class="logo-icon">
+                <img src="assets/images/logo-icon.png" class="logo-img" alt="Logo"
+                    style="border-radius: 10px; height: 55px; width: 55px;">
+            </div>
+            <div class="logo-name flex-grow-1">
+                <h5 class="mb-0">MKT-BHS</h5>
+            </div>
+            <div class="sidebar-close">
+                <span class="material-icons-outlined">close</span>
+            </div>
+        </div>
+        <div class="sidebar-nav">
+            <!--navigation-->
+            <ul class="metismenu" id="sidenav">
+                <li>
+                    <a href="dashboard.html">
+                        <div class="parent-icon"><i class="material-icons-outlined">dashboard</i>
+                        </div>
+                        <div class="menu-title">Dashboard</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="workData.html">
+                        <div class="parent-icon"><i class="material-icons-outlined">view_week</i>
+                        </div>
+                        <div class="menu-title">Work Data</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="substitute.html">
+                        <div class="parent-icon"><i class="material-icons-outlined">published_with_changes</i>
+                        </div>
+                        <div class="menu-title">Substitute Task
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="assign.html">
+                        <div class="parent-icon"><i class="material-icons-outlined">device_hub</i>
+                        </div>
+                        <div class="menu-title">Assign Task</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="upload.html">
+                        <div class="parent-icon"><i class="material-icons-outlined">upload</i>
+                        </div>
+                        <div class="menu-title">Uploads</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="users.html">
+                        <div class="parent-icon"><i class="material-icons-outlined">groups</i>
+                        </div>
+                        <div class="menu-title">Users</div>
+                    </a>
+                </li>
+            </ul>
+            <!--end navigation-->
+        </div>
+    </aside>
+    <!--end sidebar-->
+
+    <!--start main wrapper-->
+    <main class="main-wrapper">
+        <div class="main-content">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center gap-4 overflow-auto">
+                                <!-- Total -->
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-list-check text-primary fs-5 me-2"></i>
+                                    <span class="fw-bold">Total:</span>
+                                    <span class="ms-1 text-primary fw-semibold">2</span>
+                                </div>
+                                <!-- Completed -->
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-check-circle-fill text-success fs-5 me-2"></i>
+                                    <span class="fw-bold">Active:</span>
+                                    <span class="ms-1 text-success fw-semibold">1</span>
+                                </div>
+                                <!-- Pending -->
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-exclamation-octagon text-danger fs-5 me-2"></i>
+                                    <span class="fw-bold">Inactive:</span>
+                                    <span class="ms-1 text-danger fw-semibold">1</span>
+                                </div>
+
+                                <!-- 📅 Date Range Selector -->
+                                <div class="d-flex align-items-center ms-auto gap-2">
+                                    <!-- ✅ Create user Button -->
+                                    <a href="addUser.html">
+                                        <button title="Create new user" class="btn btn-sm btn-primary"><img
+                                                src="assets/images/create.png" alt="img" style="height:35px;"> Create
+                                            User
+                                        </button>
+                                    </a>
+
+                                    <!-- ⬇️ Unlock Button -->
+                                    <button title="Download Data" class="btn btn-sm btn-grd-info"><img
+                                            src="assets/images/unlockuser.png" alt="img" style="height:35px;"> Unlock
+                                        User
+                                    </button>
+
+                                    <!-- ⬇️ OTP Button -->
+                                    <a href="tempPassword.html">
+                                        <button title="OTP" class="btn btn-sm btn-primary"><img
+                                                src="assets/images/otp.png" alt="img" style="height:35px;"> OTPs
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="d-flex justify-content-center mb-2">
+                        <div class="search-box w-100">
+                            <div class="search-bar">
+                                <div class="position-relative">
+                                    <input class="form-control rounded-5 px-5 search-control" type="text"
+                                        placeholder="Search...">
+                                    <span
+                                        class="material-icons-outlined position-absolute d-lg-block d-none ms-3 translate-middle-y start-0 top-50">search</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body" style="max-height:550px;">
+                            <div
+                                style="max-height:500px; overflow: auto; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+                                <table class="table mb-0 text-nowrap table-hover" id="apr_table">
+                                    <thead class="sticky-header text-center table-warning"
+                                        style="position: sticky; top: 0; z-index: 1;">
+                                        <tr>
+                                            <th scope="col">Sr. No.</th>
+                                            <th scope="col">Username</th>
+                                            <th scope="col">Reporting To</th>
+                                            <th scope="col">Aspect ID</th>
+                                            <th scope="col">Lock Status</th>
+                                            <th scope="col">Edit</th>
+                                            <th scope="col">Delete</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-center">
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td class="text-success fw-bold"><img src="assets/images/lock.png"
+                                                    alt="edit" style="height: 22px;"></td>
+                                            <td><a href="editUser.html"><img src="assets/images/data-edit.png"
+                                                        alt="edit" style="height: 22px;"></a>
+                                            </td>
+                                            <td><a href="#"><img src="assets/images/delete-data.png" alt="edit"
+                                                        style="height: 22px;"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td>Data</td>
+                                            <td class="text-success fw-bold"><img src="assets/images/unlock.png"
+                                                    alt="edit" style="height: 22px;"></td>
+                                            <td><a href="editUser.html"><img src="assets/images/data-edit.png"
+                                                        alt="edit" style="height: 22px;"></a>
+                                            </td>
+                                            <td><a href="#"><img src="assets/images/delete-data.png" alt="edit"
+                                                        style="height: 22px;"></a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!--end main wrapper-->
+    <!--start overlay-->
+    <div class="overlay btn-toggle"></div>
+    <!--end overlay-->
+    <!--start footer-->
+    <!-- <footer class="page-footer bg-light">
+        <p class="mb-0"></p>
+    </footer> -->
+    <!--end footer-->
+    <!--bootstrap js-->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!--plugins-->
+    <script src="assets/js/jquery.min.js"></script>
+    <!--plugins-->
+    <script src="assets/plugins/metismenu/metisMenu.min.js"></script>
+    <script src="assets/plugins/simplebar/js/simplebar.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
